@@ -74,7 +74,7 @@ class KerasDeepFM(object):
 		
 		self.model = Model(inputs=input_cols, outputs=[y])
 		# self.model.summary()
-		self.model.compile(optimizer=Adam(lr=0.0 v1,decay=0.1), loss='binary_crossentropy',metrics=[jacek_auc])
+		self.model.compile(optimizer=Adam(lr=0.001,decay=0.1), loss='binary_crossentropy',metrics=[jacek_auc])
 		self.model.fit(x_train, y_train, batch_size=64, epochs=5, validation_data=(x_val,y_val))
 
 	def predict(self,x):
